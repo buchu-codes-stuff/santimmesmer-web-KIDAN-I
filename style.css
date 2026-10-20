@@ -1,0 +1,539 @@
+.login_input {
+  width: 300px;
+  height: 70px;
+  text-align: center;
+  border-radius: 15px;
+}
+.calc-btn {
+  width: 370px;
+  font: bold;
+}
+h2 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.zero {
+  width: 300px;
+}
+:root {
+  /*
+            Demonstration image from Unsplash by Christina @ wocintechchat.com
+            Replace with your own professional photo.
+        */
+  --sbh-bg-image: url("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200");
+  --sbh-min-height: 500px;
+  --sbh-text-color: #374151;
+  --sbh-bg-color: #f9fafb;
+  --sbh-headline-color: #111827;
+  --sbh-cta-bg: #1f2937;
+  --sbh-cta-hover-bg: #374151;
+  --sbh-cta-text-color: #ffffff;
+  --fsi-bg-image: url("https://server.wallpaperalchemy.com/storage/wallpapers/742/arch-linux-minimal-blue-aesthetic-4k-wallpaper.jpg");
+  --fsi-min-height: 100vh;
+  --fsi-padding: 2rem 1.5rem;
+  --fsi-text-color: #ffffff;
+  --fsi-overlay-color: rgba(0, 0, 0, 0.4);
+  --fsi-cta-border-color: #ffffff;
+}
+.split-bio-hero {
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--sbh-bg-color);
+}
+.split-bio-hero * {
+  box-sizing: border-box;
+}
+.split-bio-hero-image {
+  min-height: 300px; /* Provides height for the image on mobile */
+  background-image: var(--sbh-bg-image);
+  background-size: cover;
+  background-position: center 25%;
+}
+.split-bio-hero-content {
+  display: flex;
+  flex-direction: column;
+}
+.split-bio-hero-greeting {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--sbh-headline-color);
+  margin: 0;
+}
+.split-bio-hero-title {
+  color: var(--sbh-headline-color);
+  margin: 0.5rem 0 1.5rem 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.split-bio-hero-bio {
+  color: var(--sbh-text-color);
+  margin: 0 0 2.5rem 0;
+  line-height: 1.6;
+  max-width: 500px;
+}
+.split-bio-hero-cta {
+  display: inline-block;
+  align-self: flex-start; /* Keeps button from stretching */
+  background-color: var(--sbh-cta-bg);
+  color: var(--sbh-cta-text-color);
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.split-bio-hero-cta:hover {
+  background-color: var(--sbh-cta-hover-bg);
+}
+
+@media (min-width: 768px) {
+  .split-bio-hero {
+    flex-direction: row;
+  }
+  .split-bio-hero-image,
+  .split-bio-hero-content {
+    flex: 1; /* Each takes up 50% of the width */
+    min-height: var(--sbh-min-height);
+  }
+  .split-bio-hero-content {
+    padding: 3rem 4rem;
+  }
+}
+.grid {
+  display: grid;
+  /* Creates 3 exactly equal columns */
+  grid-template-columns: repeat(3, 1fr);
+  /* Space between buttons */
+  gap: 10px;
+  /* Total width of the grid container */
+  max-width: 300px;
+}
+.fsi-hero {
+  box-sizing: border-box;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  position: relative;
+  width: 100%;
+  min-height: var(--fsi-min-height);
+  padding: var(--fsi-padding);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-image: var(--fsi-bg-image);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.fsi-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--fsi-overlay-color);
+  z-index: 1;
+}
+.fsi-hero * {
+  box-sizing: border-box;
+}
+.fsi-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.fsi-hero-title {
+  color: var(--fsi-text-color);
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+.fsi-hero-tagline {
+  color: var(--fsi-text-color);
+  margin: 0 0 2.5rem 0;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  opacity: 0.9;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.fsi-hero-cta {
+  display: inline-block;
+  background: transparent;
+  color: var(--fsi-text-color);
+  border: 2px solid var(--fsi-cta-border-color);
+  padding: 0.8rem 2.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  text-transform: uppercase;
+}
+.fsi-hero-cta:hover {
+  background-color: var(--fsi-cta-border-color);
+  color: #000000;
+}
+.fade-in {
+  -webkit-animation: fade-in 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2026-9-21 16:49:57
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slide-in-right {
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2026-9-21 16:55:55
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-in-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+#error {
+  color: rgb(255, 36, 36);
+}
+:root {
+  --sidebar-width: 260px;
+  --sidebar-width-collapsed: 90px;
+  --header-height-mobile: 60px;
+  --color-primary: #274060;
+  --color-sidebar-bg: #1b2845;
+  --color-sidebar-text: #fff;
+  --color-sidebar-link-active-bg: #274060d8;
+  --color-page-bg: #f8f9fa;
+  --color-text-primary: #274060;
+  --color-border: #1b2845;
+  --font-family-sans-serif: "Inter", system-ui, -apple-system, sans-serif;
+  --transition-speed: 0.3s;
+  --color-background: #f9fafb;
+  --color-surface: #ffffff; /* For nav backgrounds */
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-primary-accent: #6b6b6b;
+
+  --top-nav-height: 100px;
+  --bottom-tab-height: 10px;
+  --font-family-sans-serif: "Inter", -apple-system, sans-serif;
+  --transition-speed: 0.2s;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-family: var(--font-family-sans-serif);
+  background-color: var(--color-page-bg);
+  color: var(--color-text-primary);
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Vertical Sidebar --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--color-sidebar-bg);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform var(--transition-speed) ease;
+}
+.sidebar.is-open {
+  transform: translateX(0);
+}
+.sidebar__header {
+  padding: 1.5rem;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.sidebar__brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.sidebar__menu {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  flex-grow: 1;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  color: var(--color-sidebar-text);
+  text-decoration: none;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.sidebar-link__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.sidebar-link__text {
+  white-space: nowrap;
+  transition:
+    opacity var(--transition-speed) ease,
+    width var(--transition-speed) ease;
+}
+.sidebar-link:hover {
+  background-color: var(--color-sidebar-link-active-bg);
+}
+.sidebar-link.is-active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.sidebar__footer {
+  padding: 1.5rem;
+  flex-shrink: 0;
+  border-top: 1px solid var(--color-border);
+}
+#sidebar-collapse-btn {
+  display: none;
+} /* Hidden on mobile */
+
+/* --- Mobile Header & Content --- */
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height-mobile);
+  padding: 0 1rem;
+  background: #fff;
+  border-bottom: 1px solid var(--color-border);
+}
+.page-content-wrapper {
+  width: 100%;
+}
+.main-content {
+  padding: 1.5rem;
+}
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* --- Desktop Styles --- */
+@media (min-width: 992px) {
+  .mobile-header,
+  .sidebar-overlay {
+    display: none;
+  }
+  .sidebar {
+    position: sticky;
+    transform: translateX(0);
+    transition: width var(--transition-speed) ease;
+  }
+  .page-content-wrapper {
+    flex-grow: 1;
+    margin-left: 60px;
+    transition: margin-left var(--transition-speed) ease;
+  }
+
+  #sidebar-collapse-btn {
+    display: flex;
+  }
+
+  /* --- Collapsed State --- */
+  .sidebar.is-collapsed {
+    width: var(--sidebar-width-collapsed);
+  }
+  .sidebar.is-collapsed .sidebar-link {
+    justify-content: center;
+  }
+  .sidebar.is-collapsed .sidebar-brand {
+    justify-content: center;
+  }
+
+  /* Hide all text spans when collapsed */
+  .sidebar.is-collapsed .sidebar-link__text,
+  .sidebar.is-collapsed .sidebar__brand span {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .sidebar.is-collapsed + .page-content-wrapper {
+    margin-left: var(--sidebar-width-collapsed);
+  }
+
+  /* Logic for swapping collapse/expand icons */
+  .icon-expand {
+    display: none;
+  }
+  .sidebar.is-collapsed .icon-collapse {
+    display: none;
+  }
+  .sidebar.is-collapsed .icon-expand {
+    display: block;
+  }
+}
+span {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 688;
+  font-style: normal;
+  color: var(--color-sidebar-bg);
+  font: bold;
+}
+p {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+.flex {
+  display: flex;
+  gap: 10px;
+}
+.add-product {
+  border-radius: 100%;
+  color: white;
+  background-color: #1b2845;
+  height: 62px;
+  width: 62px;
+  justify-content: right;
+  align-items: right;
+}
+.add-product:hover {
+  background-color: #274060;
+}
+.add-product .the-big-one {
+  font-size: larger;
+}
+flex {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  margin-right: 40px;
+}
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.dashboard-cards .card {
+  flex: 1 1 18rem;
+  max-width: 18rem;
+}

